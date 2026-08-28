@@ -1,0 +1,105 @@
+{
+  "name": "claude-oracle-mcp",
+  "version": "0.2.1",
+  "description": "An MCP server for discovering skills, plugins, and MCP servers in Claude Code",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "bin": {
+    "claude-oracle-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist/",
+    ".claude/skills/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && npm run lint",
+    "prepublishOnly": "npm run build && npm run lint && npm run format:check",
+    "prepare": "husky || true"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "anthropic",
+    "llm",
+    "ai",
+    "ai-tools",
+    "ai-agent",
+    "skills",
+    "plugins",
+    "discovery",
+    "agent-skills",
+    "tool-discovery",
+    "package-search",
+    "registry",
+    "marketplace",
+    "npx",
+    "zero-install",
+    "cli",
+    "developer-tools",
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Vvkmnn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vvkmnn/claude-oracle-mcp.git"
+  },
+  "homepage": "https://github.com/Vvkmnn/claude-oracle-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Vvkmnn/claude-oracle-mcp/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Vvkmnn"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.0",
+    "fast-xml-parser": "^4.5.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.18.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.4.2",
+    "semantic-release": "^24.0.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.18.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
