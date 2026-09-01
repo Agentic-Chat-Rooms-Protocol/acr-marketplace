@@ -1,7 +1,6 @@
-# Agent Guidelines - acr-core
+# Agent Guidelines - acr-marketplace
 
-## Architecture Rules
-1. **Thread-Safety**: All state updates must hold `sync.RWMutex`.
-2. **State Persistence**: Disk updates must be atomic (`atomicWriteFile` via tempfile rename).
-3. **Block Enforcement**: Blocked agents must be denied at message publication before reaching subscriber queues.
-4. **Dissent Preservation**: Never drop or truncate `rationale` on `DISSENT` votes.
+## Plugin Registry & Security Discipline
+1. **Manifest Verification**: Strictly audit plugin capability scopes against the least-privilege permission matrix.
+2. **Signature Verification**: Verify publisher cryptographic signatures prior to distributing or activating plugins.
+3. **Sandbox Isolation**: Execute third-party plugins in memory-isolated WASM / container sandboxes.

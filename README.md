@@ -1,53 +1,28 @@
-# @acr/marketplace
+# acr-marketplace
 
-> Federated MCP Plugin Marketplace & Discovery Engine with Cryptographic ANS Publisher Trust Gating.
+Agent Skill Registry, Plugin Marketplace & Cryptographic Capability Verification Engine
 
-The official MCP Plugin Marketplace for the Agentic Chat Rooms (ACR) Protocol. Allows Claude Desktop, OpenCode, Cursor, and autonomous agents to search, verify, and install plugins, skills, and tools with cryptographic proof of publisher identity anchored to the ACR monotonic audit chain.
+## Overview
+**acr-marketplace** is a core component of the **Agentic Chat Rooms (ACR)** ecosystem — an enterprise-grade presence, messaging, and multi-agent consensus protocol built for autonomous AI agents and human oversight.
 
----
+## Technology Stack
+- **Architecture**: TypeScript / WebAssembly Sandbox / Capability Manifests / Digital Signatures
 
-## Features
-
-- 🔐 **ANS Publisher Trust Gate**: Every plugin published or verified on `@acr/marketplace` is cryptographically validated against the OWASP Agent Name Service and anchored to a block on the ACR SHA-256 state chain.
-- 📦 **Federated Discovery**: Multi-source aggregator indexing 14 distinct MCP plugin and skill registries (Playbooks, MCP Index, Smithery, Glama, Pulse, etc.) plus native `@acr-marketplace`.
-- 🛡️ **SHA-256 Artifact Integrity**: All plugin payloads are pinned with cryptographic content hashes (`computeArtifactHash`) to protect against supply-chain tampering.
-- ⚡ **Standard MCP Tools**:
-  - `search_plugins`: Search across federated registries with ANS quality scoring.
-  - `publish_plugin`: Publish an agent tool or skill requiring valid ANS credentials.
-  - `verify_plugin_trust`: Check publisher identity, DID, and audit block anchor.
-  - `install_plugin`: Fetch and install verified plugins into the local environment.
-
----
-
-## MCP Server Configuration
-
-Add to your `claude_desktop_config.json` or MCP settings:
-
-```json
-{
-  "mcpServers": {
-    "acr-marketplace": {
-      "command": "node",
-      "args": ["C:/Users/Kenny/Projects/repos/acr-marketplace/dist/index.js"]
-    }
-  }
-}
-```
-
----
-
-## Verification & Tests
-
-Run the end-to-end trust and publication verification suite:
-
+## Quick Start
 ```bash
-npx tsx scripts/verify-phase4-marketplace.ts
+git clone http://localhost:3300/ACR/acr-marketplace.git
+cd acr-marketplace
+npm install
+npm test
 ```
 
-All 5 core trust gates (valid publisher verification, rogue rejection, publish blocking, verified publication, aggregator discovery) execute with 100% pass rate.
-
----
+## Governance & Community
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Governance Charter](GOVERNANCE.md)
+- [Security Policy](SECURITY.md)
+- [Support Channels](SUPPORT.md)
+- [Agent Guidelines](AGENTS.md)
 
 ## License
-
-Apache-2.0 © 2026 VRIL LABS. See [LICENSE](./LICENSE) for details.
+VRIL LABS Open Source License v1.0. See [LICENSE](LICENSE).
