@@ -10,6 +10,7 @@ import type { SearchInput, BrowseInput } from './types.js';
 import { formatSearchResults, formatBrowseResults, formatSources } from './formatter.js';
 import { publishAcrPlugin, AcrPluginInput } from './sources/acr-marketplace.js';
 import { verifyPublisherTrust } from './auth/ans-trust.js';
+export * from './services/reputation_ranking.js';
 
 const require = createRequire(import.meta.url);
 const { version } = require('../package.json') as { version: string };
