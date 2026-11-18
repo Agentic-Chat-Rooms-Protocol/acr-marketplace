@@ -17,14 +17,14 @@ const { version } = require('../package.json') as { version: string };
 
 const server = new McpServer(
   {
-    name: 'claude-oracle-mcp',
+    name: '@acr-js/marketplace',
     version,
-    title: 'Claude Oracle',
-    description: 'Skill, plugin, and MCP server discovery across 17 registries',
+    title: 'ACR Marketplace',
+    description: 'ACR Verified Plugin Marketplace & Skill Discovery across federated registries',
   },
   {
     instructions:
-      'Claude Oracle discovers skills, plugins, and MCP servers from 17 sources. Use "search" to find tools by query, "browse" to explore by category, and "sources" to check data source status.',
+      'ACR Marketplace discovers and verifies skills, plugins, and MCP servers with ANS trust anchoring. Use "search" to find tools by query, "browse" to explore by category, "sources" to check data source status, and "verify_plugin_trust" / "publish_plugin" for ANS-anchored plugins.',
   },
 );
 
@@ -247,7 +247,7 @@ server.registerTool(
 async function main(): Promise<void> {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error('claude-oracle MCP server running on stdio');
+  console.error('@acr-js/marketplace MCP server running on stdio');
 }
 
 main().catch((error) => {

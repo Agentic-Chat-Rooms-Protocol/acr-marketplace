@@ -203,7 +203,7 @@ export async function searchGithub(query: string): Promise<Resource[]> {
   try {
     const headers: Record<string, string> = {
       Accept: 'application/vnd.github.v3+json',
-      'User-Agent': 'claude-oracle-mcp',
+      'User-Agent': '@acr-js/marketplace',
     };
 
     // Optional auth for higher rate limits (10 req/min → 30 req/min)
@@ -261,7 +261,7 @@ export function consumeGithubWarning(): string | null {
   rateLimitWarned = false;
   const hint = process.env.GITHUB_TOKEN
     ? 'GitHub rate limit hit despite token — try again in a minute.'
-    : 'GitHub rate-limited (no token). For better results: claude mcp add-json oracle \'{"command":"node","args":["/path/to/dist/index.js"],"env":{"GITHUB_TOKEN":"your-token"}}\' or export GITHUB_TOKEN=$(gh auth token)';
+    : 'GitHub rate-limited (no token). For better results: claude mcp add-json acr-marketplace \'{"command":"node","args":["/path/to/dist/index.js"],"env":{"GITHUB_TOKEN":"your-token"}}\' or export GITHUB_TOKEN=$(gh auth token)';
   return hint;
 }
 

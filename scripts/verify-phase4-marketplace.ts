@@ -61,7 +61,7 @@ async function main() {
   console.log('    - Install Command:', validPub.resource?.install_command);
 
   // Test 5: Search discovery via aggregator
-  console.log('\n[Test 5] Querying Claude Oracle multi-source search engine for "acr-quantum-solver"...');
+  console.log('\n[Test 5] Querying ACR Marketplace multi-source search engine for "acr-quantum-solver"...');
   const searchOut = await search({ query: 'acr-quantum-solver', limit: 10 });
   console.log('  Sources searched:', searchOut.sources_searched.length);
   console.log('  Results found:', searchOut.results.length);

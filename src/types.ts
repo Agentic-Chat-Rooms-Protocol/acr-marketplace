@@ -1,5 +1,5 @@
 /**
- * Resource types supported by claude-oracle
+ * Resource types supported by @acr-js/marketplace
  */
 export type ResourceType = 'skill' | 'plugin' | 'mcp';
 

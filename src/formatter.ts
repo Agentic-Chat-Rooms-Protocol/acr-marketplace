@@ -1,11 +1,10 @@
 import type { Resource, DataSource, SearchOutput } from './types.js';
 
 /**
- * Oracle MCP formatter - beautiful bordered output with 🔮 identifier
- * Pattern: Mirrors historian/praetorian formatting with unique oracle branding
+ * ACR Marketplace MCP formatter - bordered output with ACR emblem
  */
 
-const ORACLE_EMOJI = '🔮';
+const ACR_BADGE = '◆';
 const TOP_LEFT = '╭─';
 const TOP_RIGHT = '─╮';
 const SIDE = '│';
@@ -46,7 +45,7 @@ function createBox(header: string, content: string[], width = 65): string {
     wrappedContent.push(...wrapLine(line, innerWidth));
   }
 
-  const topBorder = `${TOP_LEFT} ${ORACLE_EMOJI}  ${HORIZONTAL.repeat(width - header.length - 8)}${header} ${TOP_RIGHT}`;
+  const topBorder = `${TOP_LEFT} ${ACR_BADGE}  ${HORIZONTAL.repeat(width - header.length - 8)}${header} ${TOP_RIGHT}`;
   const bottomBorder = `${BOTTOM_LEFT}${HORIZONTAL.repeat(width)}${BOTTOM_RIGHT}`;
 
   const lines = [topBorder];

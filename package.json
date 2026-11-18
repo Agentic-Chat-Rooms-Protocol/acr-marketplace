@@ -1,7 +1,7 @@
 {
-  "name": "claude-oracle-mcp",
-  "version": "0.2.1",
-  "description": "An MCP server for discovering skills, plugins, and MCP servers in Claude Code",
+  "name": "@acr-js/marketplace",
+  "version": "1.0.1",
+  "description": "ACR Verified Plugin Marketplace & Skill Discovery MCP Server",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,7 +9,7 @@
     ".": "./dist/index.js"
   },
   "bin": {
-    "claude-oracle-mcp": "./dist/index.js"
+    "acr-marketplace": "./dist/index.js"
   },
   "files": [
     "dist/",
@@ -18,59 +18,41 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc && chmod +x dist/index.js",
+    "build": "tsc",
     "dev": "tsc --watch",
     "start": "node dist/index.js",
-    "clean": "rm -rf dist",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
     "typecheck": "tsc --noEmit",
-    "test:unit": "npx tsx --test test/reputation_ranking.test.ts",
+    "type-check": "tsc --noEmit",
+    "test:unit": "npx tsx --test test/reputation_ranking.test.ts test/ans_trust.test.ts",
     "test": "npm run typecheck && npm run test:unit",
-    "prepublishOnly": "npm run build && npm run lint && npm run format:check",
-    "prepare": "husky || true"
+    "prepublishOnly": "npm run build && npm run lint && npm run format:check"
   },
   "keywords": [
-    "claude",
-    "claude-code",
+    "acr",
+    "agentic-chat-rooms",
     "mcp",
     "mcp-server",
     "model-context-protocol",
-    "anthropic",
-    "llm",
-    "ai",
-    "ai-tools",
-    "ai-agent",
-    "skills",
     "plugins",
-    "discovery",
-    "agent-skills",
-    "tool-discovery",
-    "package-search",
-    "registry",
+    "skills",
     "marketplace",
-    "npx",
-    "zero-install",
-    "cli",
-    "developer-tools",
-    "typescript",
-    "nodejs"
+    "ans",
+    "did",
+    "typescript"
   ],
-  "author": "Vvkmnn",
-  "license": "MIT",
+  "author": "@acr-js",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vvkmnn/claude-oracle-mcp.git"
+    "url": "git+https://github.com/Agentic-Chat-Rooms-Protocol/acr-marketplace.git"
   },
-  "homepage": "https://github.com/Vvkmnn/claude-oracle-mcp#readme",
+  "homepage": "https://github.com/Agentic-Chat-Rooms-Protocol/acr-marketplace#readme",
   "bugs": {
-    "url": "https://github.com/Vvkmnn/claude-oracle-mcp/issues"
-  },
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/Vvkmnn"
+    "url": "https://github.com/Agentic-Chat-Rooms-Protocol/acr-marketplace/issues"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -94,13 +76,8 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.4.2",
     "semantic-release": "^24.0.0",
+    "tsx": "^4.19.0",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.18.0"
-  },
-  "lint-staged": {
-    "src/**/*.ts": [
-      "prettier --write",
-      "eslint --fix"
-    ]
   }
 }

@@ -26,7 +26,7 @@ export async function verifyPublisherTrust(
 
   const cleanName = publisherAnsName.trim();
   const acrUrl = process.env.ACR_DAEMON_URL || 'http://127.0.0.1:20443';
-  const routeAnsUrl = process.env.ROUTE_ANS_URL || 'http://127.0.0.1:8080';
+  const routeAnsUrl = process.env.ROUTE_ANS_URL || 'http://127.0.0.1:20443';
 
   let did = providedDid;
   let stateHash: string | undefined;
