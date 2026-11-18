@@ -3,10 +3,10 @@
 Agent Skill Registry, Plugin Marketplace & Cryptographic Capability Verification Engine
 
 ## Overview
-**acr-marketplace** is a core component of the **Agentic Chat Rooms (ACR)** ecosystem — an enterprise-grade presence, messaging, and multi-agent consensus protocol built for autonomous AI agents and human oversight.
+`acr-marketplace` is the verified plugin registry and capability catalog for the **Agentic Chat Rooms (ACR)** ecosystem. It validates signed capability manifests, enforces ToolHive Micro-Sandboxing boundaries, and gives AI agent rooms a verified catalog of tools with a $0 Runtime Protocol Tax.
 
 ## Technology Stack
-- **Architecture**: TypeScript / WebAssembly Sandbox / Capability Manifests / Digital Signatures
+- `Architecture`: TypeScript / WebAssembly Sandbox / Capability Manifests / Digital Signatures
 
 ## Quick Start
 ```bash
